@@ -1,5 +1,4 @@
-const weather = document.querySelector(".js-weather"); // 해당 클래스명을 가지는 곳에 이하의 function을 적용한다.
-
+const weather = document.querySelector(".js-weather");
 const API_KEY = "425a6d02b35cd872425e6c4dfe82d374";
 const COORDS = 'coords';
 
@@ -19,13 +18,12 @@ function saveCoords(coordsObj) {
 }
 
 function handleGeoSuccess(position) {
-  const latitude = position.coords.latitude // 위도
-  const longitude = position.coords.longitude // 경도
-  const coordsObj = { // 위도,경도 변수를 하나로 묶어 객체로 만듬.
+  const latitude = position.coords.latitude
+  const longitude = position.coords.longitude
+  const coordsObj = {
     latitude,
     longitude
   };
-  // 위에서 만든 객체를 localStorage 이용하여 저장하기 위해 saveCoords로 보냄.
   saveCoords(coordsObj);
   getWeather(latitude, longitude);
 }
