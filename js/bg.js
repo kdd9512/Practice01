@@ -1,6 +1,6 @@
 const body = document.querySelector("body");
 
-const IMG_NUM = 5
+const IMG_NUM = 30
 
 function paintImage(imgNumber) {
   const image = new Image();
